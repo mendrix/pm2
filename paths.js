@@ -7,6 +7,7 @@
 var debug = require('debug')('pm2:paths');
 var p     = require('path');
 var fs    = require('fs')
+var crypto = require('crypto');
 
 function getDefaultPM2Home() {
   var PM2_ROOT_PATH;
@@ -81,10 +82,17 @@ module.exports = function(PM2_HOME) {
 
   if (process.platform === 'win32' ||
       process.platform === 'win64') {
-    //@todo instead of static unique rpc/pub file custom with PM2_HOME or UID
-    pm2_file_stucture.DAEMON_RPC_PORT = '\\\\.\\pipe\\rpc.sock';
-    pm2_file_stucture.DAEMON_PUB_PORT = '\\\\.\\pipe\\pub.sock';
-    pm2_file_stucture.INTERACTOR_RPC_PORT = '\\\\.\\pipe\\interactor.sock';
+
+    // generate sha2566 hashed suffix from full path of PM2_HOME
+    const fullPm2HomePath = p.resolve(PM2_HOME);
+    const hash = crypto.createHash('sha256');
+    hash.update(fullPm2HomePath);
+    const suffix = hash.digest('hex');
+
+    // use suffix to make unique pipe names for each pm2 instance
+    pm2_file_stucture.DAEMON_RPC_PORT = `\\\\.\\pipe\\rpc_${suffix}.sock`;
+    pm2_file_stucture.DAEMON_PUB_PORT = `\\\\.\\pipe\\pub_${suffix}.sock`;
+    pm2_file_stucture.INTERACTOR_RPC_PORT = `\\\\.\\pipe\\interactor_${suffix}.sock`;
   }
 
   return pm2_file_stucture;

@@ -1,3 +1,7 @@
+## 4.4.1
+
+- fix: pipe names in Windows were not unique for each instance (added _suffix made from hashed PM2_HOME path)
+
 ## 4.4.0
 
 - feature: support Node v14.0
