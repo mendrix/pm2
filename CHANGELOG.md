@@ -1,3 +1,6 @@
+## 4.5.2
+
+- fix: pipe names in Windows were not unique for each instance (added _suffix made from hashed PM2_HOME path)
 
 ## 4.5.1
 
