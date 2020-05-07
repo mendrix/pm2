@@ -1,3 +1,7 @@
+## 4.4.2
+
+- using fixed version for pm2-version-check to allow for offline installs
+
 ## 4.4.1
 
 - fix: pipe names in Windows were not unique for each instance (added _suffix made from hashed PM2_HOME path)
