@@ -1,6 +1,8 @@
+
 ## 4.4.1
 
-- fix: pipe names in Windows were not unique for each instance (added _suffix made from hashed PM2_HOME path)
+- feature drop: autodump fixes #4763
+- fix: fix starting pm2 script from inside an app #4761 (need use PM2_PROGRAMMATIC)
 
 ## 4.4.0
 
