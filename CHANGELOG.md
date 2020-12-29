@@ -1,4 +1,4 @@
-## 4.5.2
+## 4.5.2 MendriX:
 
 - fix: pipe names in Windows were not unique for each instance (added _suffix made from hashed PM2_HOME path)
 
