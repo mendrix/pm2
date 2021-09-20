@@ -9,11 +9,12 @@
   <i>Runtime Edition</i>
 <br/><br/>
 
-<a href="https://npm-stat.com/charts.html?package=pm2&from=2015-10-09&to=2020-10-09" title="PM2 Downloads">
+  
+<a title="PM2 Downloads">
   <img src="https://img.shields.io/npm/dm/pm2" alt="Downloads per Month"/>
 </a>
 
-<a href="https://npm-stat.com/charts.html?package=pm2&from=2015-10-09&to=2020-10-09" title="PM2 Downloads">
+<a title="PM2 Downloads">
   <img src="https://img.shields.io/npm/dy/pm2" alt="Downloads per Year"/>
 </a>
 
@@ -21,7 +22,7 @@
    <img src="https://badge.fury.io/js/pm2.svg" alt="npm version">
 </a>
 
-<a href="https://travis-ci.org/Unitech/pm2" title="PM2 Tests">
+<a href="https://travis-ci.com/github/Unitech/pm2" title="PM2 Tests">
   <img src="https://travis-ci.org/Unitech/pm2.svg?branch=master" alt="Build Status"/>
 </a>
 
@@ -43,7 +44,7 @@ PM2 is constantly assailed by [more than 1800 tests](https://travis-ci.org/Unite
 
 Official website: [https://pm2.keymetrics.io/](https://pm2.keymetrics.io/)
 
-Works on Linux (stable) & macOS (stable) & Windows (stable). All Node.js versions are supported starting Node.js 8.X.
+Works on Linux (stable) & macOS (stable) & Windows (stable). All Node.js versions are supported starting Node.js 12.X.
 
 
 ### Installing PM2
@@ -54,11 +55,7 @@ With NPM:
 $ npm install pm2 -g
 ```
 
-Or if you don't have Node.js installed:
-
-```bash
-wget -qO- https://getpm2.com/install.sh | bash
-```
+You can install Node.js easily with [NVM](https://riptutorial.com/node-js/example/4578/using-node-version-manager--nvm-) or [ASDF](https://blog.natterstefan.me/how-to-use-multiple-node-version-with-asdf)
 
 ### Start an application
 
