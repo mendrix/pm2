@@ -1,5 +1,5 @@
 /**
- * Copyright 2013 the PM2 project authors. All rights reserved.
+ * Copyright 2013-2022 the PM2 project authors. All rights reserved.
  * Use of this source code is governed by a license that
  * can be found in the LICENSE file.
  */
@@ -150,7 +150,7 @@ API.prototype.connect = function(noDaemon, cb) {
       return cb(err, meta);
 
     // If new pm2 instance has been popped
-    // Lauch all modules
+    // Launch all modules
     Modularizer.launchAll(that, function(err_mod) {
       return cb(err, meta);
     });
