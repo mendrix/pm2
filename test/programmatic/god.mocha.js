@@ -255,7 +255,7 @@ describe('God', function() {
     });
   });
 
-  it('should get monitor data', function(done) {
+  it('should get empty monitor data', function(done) {
     var f = require('child_process').fork('../fixtures/echo.js')
 
     var processes = [
@@ -295,10 +295,11 @@ describe('God', function() {
     g.getMonitorData({}, function(err, procs) {
       should(err).be.null();
       procs.length.should.be.equal(processes.length);
+      // Monitoring memory and CPU no longer works
       procs[0].monit.should.be.deepEqual({memory: 0, cpu: 0});
-      procs[1].monit.memory.should.be.greaterThan(0);
+      procs[1].monit.should.be.deepEqual({memory: 0, cpu: 0});
       procs[2].monit.should.be.deepEqual({memory: 0, cpu: 0});
-      procs[3].monit.memory.should.be.greaterThan(0);
+      procs[3].monit.should.be.deepEqual({memory: 0, cpu: 0});
       f.kill()
       done()
     })
