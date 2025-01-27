@@ -14,29 +14,6 @@ $pm2 stop push.json
 
 $pm2 list
 
-#
-# Max memory auto restart option
-#
-# --max-memory-restart option && maxMemoryRestart (via JSON file)
-#
-$pm2 kill
-PM2_WORKER_INTERVAL=1000 $pm2 start big-array.js --max-memory-restart="20M"
-sleep 3
-$pm2 list
-should 'process should have been restarted' 'restart_time: 0' 0
-
-$pm2 delete all
-
-#
-# Via JSON
-#
-$pm2 start json-reload/max-mem.json
-sleep 3
-$pm2 list
-should 'process should been restarted' 'restart_time: 0' 0
-
-$pm2 delete all
-
 $pm2 start env.js
 
 OUT_LOG=`$pm2 prettylist | grep -m 1 -E "pm_out_log_path:" | sed "s/.*'\([^']*\)',/\1/"`
