@@ -1,4 +1,9 @@
-## 5.3.2 (MendriX):
+## 5.3.4 (MendriX)
+- Remove pidusage in God monitor object to remove the many calls to WMIC
+  - Prevent wmic usage from pidusage: 45fd8a3e8cbb9b8f1f2a661dd658110c152ef9c8 & d19348f53b0d22c79e952bd943b41a379f1d657d
+  - Remove pidusage dependency: d3cec43c70fc8c9287a65b32d672b40b9120d720
+
+## 5.3.2 (MendriX)
 - fix: pipe names in Windows were not unique for each instance (added _suffix made from hashed PM2_HOME path)
 
 ## 5.3.1
