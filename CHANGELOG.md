@@ -1,3 +1,6 @@
+## 5.3.5 (MendriX)
+- Fix: update version number
+
 ## 5.3.4 (MendriX)
 - Remove pidusage in God monitor object to remove the many calls to WMIC
   - Prevent wmic usage from pidusage: 45fd8a3e8cbb9b8f1f2a661dd658110c152ef9c8 & d19348f53b0d22c79e952bd943b41a379f1d657d
